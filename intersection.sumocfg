@@ -1,13 +1,13 @@
 <configuration>
     <input>
-        <net-file value=”traffic.net.xml”/>
-        <route-files value=”traffic.rou.xml”/>
+        <net-file value="tmp.net.xml"/>
+        <route-files value="output.xml"/>
     </input>
     <output>
-        <full-output value=”fulloutput.xml”/>
+        <full-output value="fulloutput.xml"/>
     </output>
     <time>
-        <begin value=”0"/>
-        <end value=”7200"/>
+        <begin value="0"/>
+        <end value="3000"/>
     </time>
 </configuration>

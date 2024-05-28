@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2022-05-31 19:32:41 by Eclipse SUMO netedit Version 1.13.0
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+<!-- generated on 2024-05-28 11:11:06 by Eclipse SUMO netedit Version 1.20.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="/Users/julesdehon/Documents/Uni/year-3/individual-project/Simulations/DuckieIntersectionSimulation/intersection_control/environments/sumo/networks/single_intersection/intersection.net.xml"/>
+        <sumo-net-file value="C:\大四\112-2\car\CarFinal\intersection.net.xml"/>
     </input>
 
     <output>
-        <output-file value="/Users/julesdehon/Documents/Uni/year-3/individual-project/Simulations/DuckieIntersectionSimulation/intersection_control/environments/sumo/networks/single_intersection/intersection.net.xml"/>
+        <output-file value="C:\大四\112-2\car\CarFinal\intersection.net.xml"/>
     </output>
 
     <processing>
-        <geometry.min-radius.fix.railways value="false"/>
-        <geometry.max-grade.fix value="false"/>
         <offset.disable-normalization value="true"/>
-        <lefthand value="false"/>
     </processing>
 
     <junctions>
         <no-turnarounds value="true"/>
-        <junctions.corner-detail value="5"/>
-        <junctions.limit-turn-speed value="5.5"/>
-        <rectangular-lane-cut value="false"/>
     </junctions>
 
-    <pedestrian>
-        <walkingareas value="false"/>
-    </pedestrian>
-
-    <report>
-        <aggregate-warnings value="5"/>
-    </report>
+    <netedit>
+        <new-network value="false"/>
+    </netedit>
 
 </configuration>
 -->
