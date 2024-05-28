@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes>
+
+    <vType id="CAV" vClass="passenger" color="1,1,0" maxSpeed="16"/>
+    <vType id="HDV" vClass="passenger" color="0,0,0" maxSpeed="16"/>
+
+    <flow id="NW" type="CAV" beg="0" end="7200" probablility="0.7">
+</routes>

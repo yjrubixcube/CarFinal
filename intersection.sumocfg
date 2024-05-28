@@ -1,0 +1,13 @@
+<configuration>
+    <input>
+        <net-file value=”traffic.net.xml”/>
+        <route-files value=”traffic.rou.xml”/>
+    </input>
+    <output>
+        <full-output value=”fulloutput.xml”/>
+    </output>
+    <time>
+        <begin value=”0"/>
+        <end value=”7200"/>
+    </time>
+</configuration>
