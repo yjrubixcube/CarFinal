@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<connections>
+
+    <connection from="iW" to="oE" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iW" to="oS" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iW" to="oN" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iE" to="oW" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iE" to="oS" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iE" to="oN" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iS" to="oW" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iS" to="oE" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iS" to="oN" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iN" to="oW" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iN" to="oE" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+    <connection from="iN" to="oS" fromLane="0" toLane="0" contPos="0.0" pass="True"/>
+
+</connections>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nodes>
+    <node id="intersection" x="0.0" y="0.0" type="priority"/>
+
+    <node id="W" x="-600.0" y="0.0" type="priority"/>
+    <node id="E" x="600.0" y="0.0" type="priority"/>
+    <node id="S" x="0.0" y="-600.0" type="priority"/>
+    <node id="N" x="0.0" y="600.0" type="priority"/>
+
+    <node id="m1" x="-300.0" y="0.0" type="priority"/>
+    <node id="m2" x="300.0" y="0.0" type="priority"/>
+    <node id="m3" x="0.0" y="-300.0" type="priority"/>
+    <node id="m4" x="0.0" y="300.0" type="priority"/>
+
+
+</nodes>

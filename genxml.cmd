@@ -1,0 +1,1 @@
+netconvert --node-files=data/intersection.nod.xml --edge-files=data/intersection.edg.xml --connection-files=data/intersection.con.xml --output-file=data/intersection.net.xml

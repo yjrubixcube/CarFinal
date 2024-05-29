@@ -1,6 +1,6 @@
 <configuration>
     <input>
-        <net-file value="tmp.net.xml"/>
+        <net-file value="data/intersection.net.xml"/>
         <route-files value="output.xml"/>
     </input>
     <output>

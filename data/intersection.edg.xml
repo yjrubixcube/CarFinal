@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<edges>
+
+    <edge id="iW" from="W" to="intersection" priority="-1" numLanes="1" speed="16"/>
+    <edge id="iE" from="E" to="intersection" priority="-1" numLanes="1" speed="16"/>
+    <edge id="iS" from="S" to="intersection" priority="-1" numLanes="1" speed="16"/>
+    <edge id="iN" from="N" to="intersection" priority="-1" numLanes="1" speed="16"/>
+
+    <edge id="oW" to="W" from="intersection" priority="-1" numLanes="1" speed="16"/>
+    <edge id="oE" to="E" from="intersection" priority="-1" numLanes="1" speed="16"/>
+    <edge id="oS" to="S" from="intersection" priority="-1" numLanes="1" speed="16"/>
+    <edge id="oN" to="N" from="intersection" priority="-1" numLanes="1" speed="16"/>
+
+</edges>
