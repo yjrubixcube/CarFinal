@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes>
+
+    <vType id="CAV" vClass="passenger" color="1,1,1" maxSpeed="16" accel="3" decel="4.5" carFollowModel="Krauss" minGap="2.5"/>
+    <vType id="HDV" vClass="passenger" color="1,0,0" maxSpeed="16" accel="3" decel="4.5" carFollowModel="Krauss" minGap="2.5" sigma="0.5"/>
+    <!-- CAV -->
+    <flow id="CNE" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oN" from="iE"/>
+    <flow id="CNS" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oN" from="iS"/>
+    <flow id="CNW" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oN" from="iW"/>
+
+    <flow id="CEN" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oE" from="iN"/>
+    <flow id="CES" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oE" from="iS"/>
+    <flow id="CEW" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oE" from="iW"/>
+    
+    <flow id="CSN" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oS" from="iN"/>
+    <flow id="CSE" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oS" from="iE"/>
+    <flow id="CSW" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oS" from="iW"/>
+
+    <flow id="CWN" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oW" from="iN"/>
+    <flow id="CWE" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oW" from="iE"/>
+    <flow id="CWS" type="CAV" beg="0" end="3000" period="exp(0.1)" to="oW" from="iW"/>
+
+    <!-- HDV -->
+    <flow id="HNE" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oN" from="iE"/>
+    <flow id="HNS" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oN" from="iS"/>
+    <flow id="HNW" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oN" from="iW"/>
+
+    <flow id="HEN" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oE" from="iN"/>
+    <flow id="HES" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oE" from="iS"/>
+    <flow id="HEW" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oE" from="iW"/>
+    
+    <flow id="HSN" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oS" from="iN"/>
+    <flow id="HSE" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oS" from="iE"/>
+    <flow id="HSW" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oS" from="iW"/>
+
+    <flow id="HWN" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oW" from="iN"/>
+    <flow id="HWE" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oW" from="iE"/>
+    <flow id="HWS" type="HDV" beg="0" end="3000" period="exp(0.05)" to="oW" from="iW"/>
+
+    <!-- <sink edges=""> -->
+</routes>

@@ -1,13 +1,13 @@
 <configuration>
     <input>
-        <net-file value="data/intersection.net.xml"/>
-        <route-files value="output.xml"/>
+        <net-file value="data\intersection.net.xml"/>
+        <route-files value="data\intersection.rou.xml"/>
     </input>
     <output>
-        <full-output value="fulloutput.xml"/>
+        <full-output value="data\sumoresult.xml"/>
     </output>
     <time>
         <begin value="0"/>
-        <end value="3000"/>
+        <end value="1000"/>
     </time>
 </configuration>
