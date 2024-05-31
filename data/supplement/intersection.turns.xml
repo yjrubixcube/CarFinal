@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<turns>
+    <fromEdge id="iN">
+        <toEdge id="oE" probability="0.33"/>
+        <toEdge id="oW" probability="0.33"/>
+        <toEdge id="oS" probability="0.33"/>
+    </fromEdge>
+
+    <fromEdge id="iE">
+        <toEdge id="oN" probability="0.33"/>
+        <toEdge id="oW" probability="0.33"/>
+        <toEdge id="oS" probability="0.33"/>
+    </fromEdge>
+
+    <fromEdge id="iW">
+        <toEdge id="oN" probability="0.33"/>
+        <toEdge id="oE" probability="0.33"/>
+        <toEdge id="oS" probability="0.33"/>
+    </fromEdge>
+
+    <fromEdge id="iS">
+        <toEdge id="oN" probability="0.33"/>
+        <toEdge id="oE" probability="0.33"/>
+        <toEdge id="oW" probability="0.33"/>
+    </fromEdge>
+
+    <sink edges="oN"/>
+    <sink edges="oE"/>
+    <sink edges="oW"/>
+    <sink edges="oS"/>
+</turns>

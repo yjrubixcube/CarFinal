@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes>
+
+    <vType id="CAV" vClass="passenger" color="1,1,1" maxSpeed="16" accel="3" decel="4.5" carFollowModel="Krauss" minGap="2.5"/>
+    <vType id="HDV" vClass="passenger" color="1,0,0" maxSpeed="16" accel="3" decel="4.5" carFollowModel="Krauss" minGap="2.5" sigma="0.5"/>
+    <!-- CAV -->
+    <flow id="CN" type="CAV" period="exp(0.5)" number="2" from="iN"/>
+    <flow id="CE" type="CAV" period="exp(0.5)" number="1" from="iE"/>
+    <flow id="CW" type="CAV" period="exp(0.5)" number="4" from="iW"/>
+    <flow id="CS" type="CAV" period="exp(0.5)" number="3" from="iS"/>
+    <!-- HDV -->
+    
+    <flow id="HN" type="HDV" period="exp(0.5)" number="3" from="iN"/>
+    <flow id="HE" type="HDV" period="exp(0.5)" number="2" from="iE"/>
+    <flow id="HW" type="HDV" period="exp(0.5)" number="2" from="iW"/>
+    <flow id="HS" type="HDV" period="exp(0.5)" number="3" from="iS"/>
+
+</routes>
+

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-05-31 20:19:07 by Eclipse SUMO netconvert Version 1.20.0
+<!-- generated on 2024-05-31 22:33:12 by Eclipse SUMO netconvert Version 1.20.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <node-files value="data/intersection.nod.xml"/>
-        <edge-files value="data/intersection.edg.xml"/>
-        <connection-files value="data/intersection.con.xml"/>
+        <node-files value="data/supplement/intersection.nod.xml"/>
+        <edge-files value="data/supplement/intersection.edg.xml"/>
+        <connection-files value="data/supplement/intersection.con.xml"/>
     </input>
 
     <output>

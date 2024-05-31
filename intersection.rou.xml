@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-05-31 22:33:12 by Eclipse SUMO jtrrouter Version 1.20.0
+<!-- generated on 2024-05-31 22:29:27 by Eclipse SUMO jtrrouter Version 1.20.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/jtrrouterConfiguration.xsd">
 
     <input>
         <net-file value="data/intersection.net.xml"/>
-        <route-files value="data/supplement/intersection.tmp.rou.xml"/>
-        <turn-ratio-files value="data/supplement/intersection.turns.xml"/>
+        <route-files value="data/intersection.tmp.rou.xml"/>
+        <turn-ratio-files value="data/intersection.turns.xml"/>
     </input>
 
     <output>
-        <output-file value="data/intersection.rou.xml"/>
+        <output-file value="intersection.rou.xml"/>
     </output>
 
 </configuration>
@@ -43,40 +43,40 @@
     <vehicle id="HW.0" type="HDV" depart="0.00">
         <route edges="iW oN"/>
     </vehicle>
-    <vehicle id="HW.1" type="HDV" depart="0.59">
-        <route edges="iW oN"/>
+    <vehicle id="CE.1" type="CAV" depart="0.23">
+        <route edges="iE oS"/>
     </vehicle>
     <vehicle id="HN.1" type="HDV" depart="0.59">
-        <route edges="iN oE"/>
-    </vehicle>
-    <vehicle id="CN.1" type="CAV" depart="0.68">
         <route edges="iN oE"/>
     </vehicle>
     <vehicle id="CW.1" type="CAV" depart="1.06">
         <route edges="iW oE"/>
     </vehicle>
     <vehicle id="HS.1" type="HDV" depart="1.21">
-        <route edges="iS oW"/>
-    </vehicle>
-    <vehicle id="CS.1" type="CAV" depart="1.42">
         <route edges="iS oE"/>
     </vehicle>
-    <vehicle id="CS.2" type="CAV" depart="2.21">
+    <vehicle id="CS.1" type="CAV" depart="1.42">
         <route edges="iS oW"/>
     </vehicle>
-    <vehicle id="CW.2" type="CAV" depart="2.64">
-        <route edges="iW oE"/>
+    <vehicle id="HS.2" type="HDV" depart="1.48">
+        <route edges="iS oE"/>
     </vehicle>
     <vehicle id="HN.2" type="HDV" depart="3.39">
         <route edges="iN oW"/>
     </vehicle>
-    <vehicle id="HS.2" type="HDV" depart="3.48">
+    <vehicle id="HS.3" type="HDV" depart="3.75">
         <route edges="iS oE"/>
     </vehicle>
-    <vehicle id="CW.3" type="CAV" depart="3.78">
-        <route edges="iW oE"/>
+    <vehicle id="CN.1" type="CAV" depart="6.18">
+        <route edges="iN oW"/>
     </vehicle>
     <vehicle id="HE.1" type="HDV" depart="6.27">
         <route edges="iE oN"/>
+    </vehicle>
+    <vehicle id="CN.2" type="CAV" depart="16.40">
+        <route edges="iN oE"/>
+    </vehicle>
+    <vehicle id="CN.3" type="CAV" depart="17.19">
+        <route edges="iN oE"/>
     </vehicle>
 </routes>
