@@ -230,7 +230,8 @@ def solve(A, H, target_l, G, Gp):
     ##### add by myself
     expr = gp.LinExpr(0)
     for l in range(L):
-        expr.addTerms(1, z[l, N[l]-1])
+        if N[l] > 0:
+            expr.addTerms(1, z[l, N[l]-1])
 
     m.addConstr(expr == 1)
     ##### add by myself
