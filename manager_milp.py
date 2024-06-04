@@ -309,3 +309,69 @@ def solve(A, H, target_l, G, Gp):
 
     return t_result
 
+
+def fast_solve(A, H, target_l, G, Gp):
+    group_size = 10
+
+    L = len(A)
+    N = []
+    t_result = []
+    for l in range(L):
+        N.append(len(A[l])) 
+        t_result.append([0 for _ in range(N[l])])
+
+    # directly return if total number of vehicles is small
+    if sum(N) <= group_size:
+        return solve(A, H, target_l, G, Gp)
+
+    # collect vehicle indices (with increasing estimated time)
+    indices = [((l, i), A[l][i]) for l in range(L) for i in range(N[l])]
+    indices.sort(key=lambda x: x[1])
+    
+    # solve milp group by group
+    v_count = 0
+    t_start = 0
+    while v_count < sum(N):
+        A_p = [[] for _ in range(L)]
+        H_p = [[] for _ in range(L)]
+        target_l_p = [[] for _ in range(L)]
+        id_mapping = {} # id_mapping[new_id] = old_id
+
+        # the last group
+        if v_count + group_size > sum(N):
+            group_size = sum(N) - v_count
+
+        for id in range(v_count, v_count+group_size):
+            l, i = indices[id][0]
+            A_p[l].append(A[l][i])
+            H_p[l].append(H[l][i])
+            target_l_p[l].append(target_l[l][i])
+
+            id_mapping[(l, len(A_p[l])-1)] = (l, i)
+
+        '''
+        print(A_p)
+        print(H_p)
+        print(target_l)
+        print(id_mapping)
+        '''
+
+        t_group_result =  solve(A_p, H_p, target_l_p, G, Gp)
+        t_min_temp = []
+        t_max_temp = []
+        for l in range(L):
+            if len(t_group_result[l]) > 0:
+                t_min_temp.append(t_group_result[l][0])
+                t_max_temp.append(t_group_result[l][-1])
+
+        t_min = min(t_min_temp)
+        t_max = max(t_max_temp)
+        for new_l in range(len(t_group_result)):
+            for new_i in range(len(t_group_result[new_l])):
+                l, i = id_mapping[(new_l, new_i)]
+                t_result[l][i] = t_group_result[new_l][new_i] - t_min + t_start
+
+        t_start += t_max - t_min + Gp
+        v_count += group_size
+
+    return t_result
