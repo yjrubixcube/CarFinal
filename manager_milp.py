@@ -312,7 +312,7 @@ def solve(A, H, target_l, G, Gp):
 
 def fast_solve(A, H, target_l, G, Gp):
     group_size = 10
-
+    
     L = len(A)
     N = []
     t_result = []
@@ -328,9 +328,17 @@ def fast_solve(A, H, target_l, G, Gp):
     indices = [((l, i), A[l][i]) for l in range(L) for i in range(N[l])]
     indices.sort(key=lambda x: x[1])
     
+
+    # find minimum estimated time
+    t_min_temp = []
+    for l in range(L):
+        if len(A[l]) > 0:
+            t_min_temp.append(A[l][0])
+    
+    t_start = min(t_min_temp)
+
     # solve milp group by group
     v_count = 0
-    t_start = 0
     while v_count < sum(N):
         A_p = [[] for _ in range(L)]
         H_p = [[] for _ in range(L)]
