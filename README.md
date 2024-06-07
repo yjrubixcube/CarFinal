@@ -1,11 +1,16 @@
+# Introduction to Intelligent Vehicles Final Project Report
+## How to run
+requires `Gurobi`, `SUMO`
+```python
+python main.py
+```
 ## File Structures
 ### Scripts
 ```
 genxml.py: generate necessary xml files
 manager_milp.py: MILP solver function
-TODO.py
+main.py: main driver code
 const.py: some constants
-default
 ```
 
 ### Data
