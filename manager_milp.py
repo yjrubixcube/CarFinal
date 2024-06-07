@@ -310,8 +310,8 @@ def solve(A, H, target_l, G, Gp):
     return t_result
 
 
-def fast_solve(A, H, target_l, G, Gp):
-    group_size = 10
+def fast_solve(A, H, target_l, group_size, G, Gp):
+    # group_size = 10
     
     L = len(A)
     N = []

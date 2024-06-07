@@ -2,8 +2,8 @@
 
 <routes>
 
-    <vType id="CAV" vClass="passenger" color="1,1,1" maxSpeed="16" accel="3" decel="4.5" carFollowModel="Krauss" minGap="2.5"/>
-    <vType id="HDV" vClass="passenger" color="1,0,0" maxSpeed="16" accel="3" decel="4.5" carFollowModel="Krauss" minGap="2.5" sigma="0.5"/>
+    <vType id="CAV" vClass="passenger" color="1,1,1" maxSpeed="16" accel="3" decel="4.5" carFollowModel="Krauss" minGap="2.5" tau="1"/>
+    <vType id="HDV" vClass="passenger" color="1,0,0" maxSpeed="16" accel="3" decel="4.5" carFollowModel="Krauss" minGap="2.5" tau="3" sigma="0.5"/>
     <!-- CAV -->
     <flow id="CN" type="CAV" period="exp(CAV_PROB)" number="CN_NUM" from="iN"/>
     <flow id="CE" type="CAV" period="exp(CAV_PROB)" number="CE_NUM" from="iE"/>

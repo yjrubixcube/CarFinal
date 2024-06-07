@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-05-31 22:33:12 by Eclipse SUMO jtrrouter Version 1.20.0
+<!-- generated on 2024-06-08 00:48:18 by Eclipse SUMO jtrrouter Version 1.20.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/jtrrouterConfiguration.xsd">
 
     <input>
@@ -17,7 +17,7 @@
 -->
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
-    <vType id="CAV" minGap="2.50" maxSpeed="16.00" vClass="passenger" color="white" carFollowModel="Krauss" accel="3" decel="4.5"/>
+    <vType id="CAV" minGap="2.50" maxSpeed="16.00" vClass="passenger" color="white" carFollowModel="Krauss" accel="3" decel="4.5" tau="1"/>
     <vehicle id="CE.0" type="CAV" depart="0.00">
         <route edges="iE oN"/>
     </vehicle>
@@ -30,7 +30,7 @@
     <vehicle id="CW.0" type="CAV" depart="0.00">
         <route edges="iW oN"/>
     </vehicle>
-    <vType id="HDV" minGap="2.50" maxSpeed="16.00" vClass="passenger" color="red" carFollowModel="Krauss" accel="3" decel="4.5" sigma="0.5"/>
+    <vType id="HDV" minGap="2.50" maxSpeed="16.00" vClass="passenger" color="red" carFollowModel="Krauss" accel="3" decel="4.5" sigma="0.5" tau="3"/>
     <vehicle id="HE.0" type="HDV" depart="0.00">
         <route edges="iE oW"/>
     </vehicle>
@@ -43,40 +43,40 @@
     <vehicle id="HW.0" type="HDV" depart="0.00">
         <route edges="iW oN"/>
     </vehicle>
-    <vehicle id="HW.1" type="HDV" depart="0.59">
-        <route edges="iW oN"/>
+    <vehicle id="HS.1" type="HDV" depart="0.59">
+        <route edges="iS oN"/>
     </vehicle>
-    <vehicle id="HN.1" type="HDV" depart="0.59">
-        <route edges="iN oE"/>
-    </vehicle>
-    <vehicle id="CN.1" type="CAV" depart="0.68">
-        <route edges="iN oE"/>
-    </vehicle>
-    <vehicle id="CW.1" type="CAV" depart="1.06">
-        <route edges="iW oE"/>
-    </vehicle>
-    <vehicle id="HS.1" type="HDV" depart="1.21">
-        <route edges="iS oW"/>
-    </vehicle>
-    <vehicle id="CS.1" type="CAV" depart="1.42">
-        <route edges="iS oE"/>
-    </vehicle>
-    <vehicle id="CS.2" type="CAV" depart="2.21">
-        <route edges="iS oW"/>
-    </vehicle>
-    <vehicle id="CW.2" type="CAV" depart="2.64">
-        <route edges="iW oE"/>
-    </vehicle>
-    <vehicle id="HN.2" type="HDV" depart="3.39">
-        <route edges="iN oW"/>
-    </vehicle>
-    <vehicle id="HS.2" type="HDV" depart="3.48">
-        <route edges="iS oE"/>
-    </vehicle>
-    <vehicle id="CW.3" type="CAV" depart="3.78">
-        <route edges="iW oE"/>
-    </vehicle>
-    <vehicle id="HE.1" type="HDV" depart="6.27">
+    <vehicle id="HE.1" type="HDV" depart="1.06">
         <route edges="iE oN"/>
+    </vehicle>
+    <vehicle id="HW.1" type="HDV" depart="1.21">
+        <route edges="iW oE"/>
+    </vehicle>
+    <vehicle id="CW.1" type="CAV" depart="1.42">
+        <route edges="iW oE"/>
+    </vehicle>
+    <vehicle id="HW.2" type="HDV" depart="1.48">
+        <route edges="iW oS"/>
+    </vehicle>
+    <vehicle id="CW.2" type="CAV" depart="2.95">
+        <route edges="iW oE"/>
+    </vehicle>
+    <vehicle id="HS.2" type="HDV" depart="3.39">
+        <route edges="iS oW"/>
+    </vehicle>
+    <vehicle id="HW.3" type="HDV" depart="3.75">
+        <route edges="iW oE"/>
+    </vehicle>
+    <vehicle id="CW.3" type="CAV" depart="4.54">
+        <route edges="iW oS"/>
+    </vehicle>
+    <vehicle id="CS.1" type="CAV" depart="6.18">
+        <route edges="iS oE"/>
+    </vehicle>
+    <vehicle id="CS.2" type="CAV" depart="6.77">
+        <route edges="iS oE"/>
+    </vehicle>
+    <vehicle id="CS.3" type="CAV" depart="16.99">
+        <route edges="iS oE"/>
     </vehicle>
 </routes>
