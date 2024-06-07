@@ -28,72 +28,50 @@ in_intersection = {}
 
 
 def in_manager_range(data):
-    # in_edge_ids = {"iN":0, "iE":0, "iW":0, "iS":0}
     changed = False
     count = 0
-    # print(data)
+
     for vid in data:
         position = data[vid][traci.constants.VAR_POSITION]
         lane = data[vid][traci.constants.VAR_LANE_ID]
-        # in_edge, out_edge = data[vid][traci.constants.VAR_EDGES]
-        # in_edge_ids[in_edge] += 1
         x, y = position
-        # if "intersection" in lane:# and "o" in lane:
-        #     if vid in in_range:
-        #         in_range.pop(vid)
-        #     if vid not in in_intersection:
-        #         in_intersection[vid] = data[vid]
-        #         changed = True
-        #         print(f"{vid} entered intersection")
-        #     # ct = traci.simulation.getTime()
-            
-        # elif "i" in lane:
+        
         if "i" in lane:
-            # if vid in in_range:
-            #     count += 1
-            # elif vid not in in_range:
-                changed = True
-                if "N" in lane:
-                    if y < CENTER_Y + IM_RANGE:
-                        in_range[vid] = data[vid]
-                        count += 1
-                        # print(f"{vid} on lane {lane} entered manager range")
-                elif "E" in lane:
-                    if x < CENTER_X + IM_RANGE:
-                        in_range[vid] = data[vid]
-                        count += 1
-                        # print(f"{vid} on lane {lane} entered manager range")
-                elif "W" in lane:
-                    if x > CENTER_X - IM_RANGE:
-                        in_range[vid] = data[vid]
-                        count += 1
-                        # print(f"{vid} on lane {lane} entered manager range")
-                elif "S" in lane:
-                    if y > CENTER_Y - IM_RANGE:
-                        in_range[vid] = data[vid]
-                        count += 1
-                        # print(f"{vid} on lane {lane} entered manager range")
+            changed = True
+            if "N" in lane:
+                if y < CENTER_Y + IM_RANGE:
+                    in_range[vid] = data[vid]
+                    count += 1
+                    # print(f"{vid} on lane {lane} entered manager range")
+            elif "E" in lane:
+                if x < CENTER_X + IM_RANGE:
+                    in_range[vid] = data[vid]
+                    count += 1
+                    # print(f"{vid} on lane {lane} entered manager range")
+            elif "W" in lane:
+                if x > CENTER_X - IM_RANGE:
+                    in_range[vid] = data[vid]
+                    count += 1
+                    # print(f"{vid} on lane {lane} entered manager range")
+            elif "S" in lane:
+                if y > CENTER_Y - IM_RANGE:
+                    in_range[vid] = data[vid]
+                    count += 1
+                    # print(f"{vid} on lane {lane} entered manager range")
         else:
             # out lane
-            # if vid in in_range:
-            #     in_range.pop(vid)
-            #     print(f"{vid} left manager range")
             if vid in in_range:
                 in_range.pop(vid)
-                print(f"{vid} left intersection range")
-    # print(count, len(in_range))
-    # assert count == len(in_range)
+                # print(f"{vid} left intersection range")
+
     return changed
-    # if last_in_range_len != len(in_range):
-    #     last_in_range_len = len(in_range)
-    # return in_intersection, in_range
 
 def get_no_leader_time(cur_speed, max_decel, dist):
     if dist <= IN_INTERSECTION:
         return 0
     # if cur_speed < SPEED_LIMIT / 3:
     #     return 1
-    return dist / cur_speed
+    # return dist / cur_speed
     decel_time = cur_speed / max_decel
     # v**2 = v0 ** 2 + 2aX
     decel_dist = cur_speed ** 2 / (2 * max_decel)
@@ -106,7 +84,7 @@ def get_no_leader_time(cur_speed, max_decel, dist):
     return decel_time + constant_speed_time
 
 def get_with_leader_time(vid, cur_speed, max_decel, dist, leader):
-    return get_no_leader_time(cur_speed, max_decel, dist)
+    # return get_no_leader_time(cur_speed, max_decel, dist)
     leader, leader_dist = leader
     follow_speed = traci.vehicle.getFollowSpeed(vid, cur_speed, MIN_GAP, traci.vehicle.getSpeed(leader), traci.vehicle.getDecel(leader), leader)
 
@@ -206,8 +184,8 @@ def estimate_time_to_intersection(data):
         milp_data[2][lane_index].append(saved_milp_data[vid][2])
         # print(flush=True)
         # print(milp_data)
-    print("est time")
-    print(milp_data)
+    # print("est time")
+    # print(milp_data)
     milp_sol = manager_milp.solve(milp_data[0], milp_data[1], milp_data[2], 1, 3)
     # milp_sol = manager_milp.fast_solve(milp_data[0], milp_data[1], milp_data[2], 5, 1, 3)
     for i in range(len(milp_sol)):
@@ -235,18 +213,16 @@ def change_behaviour(data, manager_time):
             dist = CENTER_X - x
         elif "S" in in_edge:
             dist = CENTER_Y - y
-        print("dist", dist, vid)
+        # print("dist", dist, vid)
 
         vid2index[vid] = minind[lane_index]
         minind[lane_index] += 1
-        return
+        # return
         if dist < SLOWDOWN_RANGE:
             line = manager_time[lane_index]
-            # print(vid, vid2index[vid])
-            # curspeed = traci.vehicle.getSpeed(vid)
+            
             if line[vid2index[vid]] > ct :#- curspeed/MAX_DECEL:
                 # not your time
-                # traci.vehicle.setSpeed(vid, 0)
                 oldspeed = traci.vehicle.getSpeed(vid)
                 if vid not in slowing:
                     traci.vehicle.slowDown(vid, 0, -SPEED_LIMIT/MAX_DECEL)
@@ -262,8 +238,7 @@ def change_behaviour(data, manager_time):
                     traci.vehicle.setSpeed(vid, 0)
                 traci.vehicle.setSpeedMode(vid, 0)
 
-                print(f"slow down {vid} from {oldspeed} to {traci.vehicle.getSpeed(vid)}")
-                # exit()
+                # print(f"slow down {vid} from {oldspeed} to {traci.vehicle.getSpeed(vid)}")
             else:
                 if vid in slowing:
                     slowing.pop(vid)
@@ -271,7 +246,7 @@ def change_behaviour(data, manager_time):
                 traci.vehicle.setSpeed(vid, -1)
                 traci.vehicle.setSpeedMode(vid, 0)
 
-                print(f"speed up {vid}")
+                # print(f"speed up {vid}")
                 # exit()
 
 # to MILP: estimated time of arrival to intersection
@@ -287,21 +262,20 @@ while traci.simulation.getMinExpectedNumber():
     # print("data")
     # print(data)
     # in_intersection, in_range = in_manager_range(data)
-    print("intersection")
-    print(in_intersection)
-    print("in rnage")
-    print(in_range)
-    print("cur time")
-    print(traci.simulation.getTime())
+    # print("intersection")
+    # print(in_intersection)
+    # print("in rnage")
+    # print(in_range)
+    # print("cur time")
+    # print(traci.simulation.getTime())
     if in_range:
         if changed:
             manager_time = estimate_time_to_intersection(in_range)
+            # print("manager time")
             # print(manager_time)
-            print("manager time")
-            print(manager_time)
         change_behaviour(in_range, manager_time)
-    if len(in_range) == 0 and len(in_intersection) == 0:
-        print(traci.simulation.getTime())
+    # if len(in_range) == 0 and len(in_intersection) == 0:
+        # print(traci.simulation.getTime())
 
     traci.simulationStep()
 
